@@ -12,7 +12,7 @@ TeamTex is a lightweight and customizable LaTeX environment built for Dev Contai
 ---
 
 <p align="center">
-  <img src="docs/_img/meme.jpg" alt="TeamTex Meme" width="50%">
+  <img src="docs/img/meme.jpg" alt="TeamTex Meme" width="50%">
 </p>
 
 ## TL;DR (Quick Start)
