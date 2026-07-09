@@ -36,7 +36,7 @@ TeamTex is a lightweight and customizable LaTeX environment built for Dev Contai
 
    | Platform          | Command                                                                                            |
    | ----------------- | -------------------------------------------------------------------------------------------------- |
-   | **Ubuntu/Debian** | `sudo apt install texlive-latex-recommended texlive-latex-extra texlive-bibtex-extra biber latexmk`|
+   | **Ubuntu/Debian** | `sudo apt install texlive-full biber latexmk`|
    | **Fedora**        | `sudo dnf install texlive-scheme-medium texlive-biblatex texlive-csquotes biber latexmk`           |
    | **macOS**         | `brew install --cask mactex` (or `brew install --cask basictex` + `tlmgr install` everything)       |
    | **Windows**       | Install [MiKTeX](https://miktex.org/) or [TeX Live](https://tug.org/texlive/)                      |
