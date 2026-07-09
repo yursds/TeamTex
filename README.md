@@ -18,13 +18,63 @@ TeamTex is a lightweight and customizable LaTeX environment built for Dev Contai
 ## TL;DR (Quick Start)
 
 1. **Click "Use this template"** on GitHub to create your own repository.
-2. **Open the Environment:**
-   - **Codespace (VS Code - Recommended):** Install _GitHub Codespaces_ extension in VS Code, `Ctrl+Shift+P` > **Create New Codespace**. (Lowest latency)
-   - **Codespace (Browser):** Open repo on GitHub > `Code` > `Codespaces` > `Create codespace`. (Zero setup)
-   - **Local Dev Container:** Clone repo, open in VS Code, and click **Reopen in Container**. (Offline / Local Docker)
+2. **Open the environment:**
+
+   ### Local Setup (Standard)
+
+   **System requirements** — You need a modern LaTeX distribution (TeX Live 2020+ or MiKTeX) with:
+
+   | Component     | Minimum version | Notes                                                  |
+   | ------------- | --------------- | ------------------------------------------------------ |
+   | **TeX Live**  | 2020            | Any recent LaTeX distribution                          |
+   | **latexmk**   | 4.70            | Automates compilation passes                           |
+   | **biber**     | 2.17            | Required for bibliography processing with `biblatex`   |
+   | **biblatex**  | 3.15            | `numeric` citation style                               |
+   | **csquotes**  | —               | Recommended by `biblatex`                              |
+
+   **Quick install per platform:**
+
+   | Platform          | Command                                                                                            |
+   | ----------------- | -------------------------------------------------------------------------------------------------- |
+   | **Ubuntu/Debian** | `sudo apt install texlive-latex-recommended texlive-latex-extra texlive-bibtex-extra biber latexmk`|
+   | **Fedora**        | `sudo dnf install texlive-scheme-medium texlive-biblatex texlive-csquotes biber latexmk`           |
+   | **macOS**         | `brew install --cask mactex` (or `brew install --cask basictex` + `tlmgr install` everything)       |
+   | **Windows**       | Install [MiKTeX](https://miktex.org/) or [TeX Live](https://tug.org/texlive/)                      |
+
+   **VS Code Extensions (system-wide):**
+
+   | Extension           | ID                           | Purpose                                        |
+   | ------------------- | ---------------------------- | ---------------------------------------------- |
+   | **LaTeX Workshop**  | `James-Yu.latex-workshop`    | Auto compilation, PDF preview, SyncTeX         |
+   | **Live Share**      | `ms-vsliveshare.vsliveshare` | Real-time collaboration with multiple people   |
+
+   Then:
+
+   ```bash
+   git clone <repository-url>
+   code <project-folder>
+   ```
+
+   Open `main.tex` and start writing. Every **save (Ctrl + S)** compiles automatically!
+
+   ### Or use GitHub Codespace
+   - **From VS Code:** Install the _GitHub Codespaces_ extension, `Ctrl+Shift+P` > **Create New Codespace**. (Low latency)
+   - **From browser:** Open the repo on GitHub > `Code` > `Codespaces` > **Create codespace**. (Zero setup)
+
 3. **Wait** for the environment to load.
-4. Open `main.tex` and start typing. Every **save (Ctrl + S)** compiles automatically!
-5. Find your PDF in the `build/` folder.
+4. Find the PDF in the `build/` folder.
+
+---
+
+## Working Together (Real-Time Collaboration)
+
+TeamTex supports collaborative writing through **Live Share** (`ms-vsliveshare.vsliveshare`), pre-configured in the container.
+
+1. Open the project in VS Code.
+2. Click the **Live Share** icon in the sidebar (or `Ctrl+Shift+P` > **Live Share: Start Collaboration Session**).
+3. Share the link with your collaborators — they can edit the `.tex` files and see the compilation in real time.
+
+> **PDF Sync:** All participants see the same compiled PDF by opening `build/main.pdf` with the built-in LaTeX Workshop viewer.
 
 ---
 
