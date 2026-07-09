@@ -25,8 +25,8 @@ Below is the identical `Dockerfile` used to build the image hosted on GHCR. We k
 
 ```dockerfile
 # Default to full teXLive, but can be overridden with build args
-ARG TEXLIVE_VERSION=full
 FROM ubuntu:24.04
+ARG TEXLIVE_VERSION=full
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -40,9 +40,9 @@ RUN apt-get update && apt-get install -y \
 
 # Install specific version of texlive
 RUN if [ "$TEXLIVE_VERSION" = "full" ]; then \
-    apt-get update && apt-get install -y texlive-full && rm -rf /var/lib/apt/lists/*; \
+        apt-get update && apt-get install -y texlive-full && rm -rf /var/lib/apt/lists/*; \
     else \
-    apt-get update && apt-get install -y texlive-latex-recommended texlive-latex-extra biber latexmk && rm -rf /var/lib/apt/lists/*; \
+        apt-get update && apt-get install -y texlive-latex-recommended texlive-latex-extra biber latexmk && rm -rf /var/lib/apt/lists/*; \
     fi
 
 # Create a non-root user (good practice for devcontainers)
