@@ -2,6 +2,7 @@ services:
   teamtex:
     # Use the pre-built framework image from GHCR
     image: ghcr.io/yursds/teamtex-base:latest
+    pull_policy: always
     volumes:
       - ..:/workspace:cached
     # Overrides default command so container stays running
